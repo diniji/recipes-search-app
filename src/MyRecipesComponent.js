@@ -4,6 +4,7 @@ import appleCalculator from './icons8-healthy-food-calories-calculator-96.png';
 
 
 function MyRecipesComponent({label, image, calories, ingredients, cuisine, protein, fatTotal, fatSat, fatTrans, carbs, fiber, sugars, cholesterol, vitD, calcium, iron, potassium, servings, instructions}) {
+    
     return(
         <div className="singleRecipeWrap">
             <div className="singleRecipe">
@@ -50,7 +51,7 @@ function MyRecipesComponent({label, image, calories, ingredients, cuisine, prote
                                 <ul>
                                     <li> <img src={appleCalculator} className="icon" alt="apple calculator" /> {protein.label} {((protein.quantity)/servings).toFixed()}{protein.unit}
                                     </li>
-                                    <li> <img src={appleCalculator} className="icon" alt="apple calculator" /> Total Fat {((fatTotal.quantity)/servings).toFixed()}{fatTotal.unit} / Saturated {((fatSat.quantity)/servings).toFixed()}{fatSat.unit} / Trans {((fatTrans.quantity)/servings).toFixed()}{fatTrans.unit}
+                                    <li> <img src={appleCalculator} className="icon" alt="apple calculator" /> Total Fat {((fatTotal.quantity)/servings).toFixed()}{fatTotal.unit} / Saturated {((fatSat.quantity)/servings).toFixed()}{fatSat.unit} / Trans {((fatTrans !== undefined ? fatTrans.quantity : 0)/servings).toFixed()}{fatTrans !== undefined ? fatTrans.unit : 0}
                                     </li>
                                     <li> <img src={appleCalculator} className="icon" alt="apple calculator" /> Carbs {((carbs.quantity)/servings).toFixed()}{carbs.unit} / Fiber {((fiber.quantity)/servings).toFixed()}{fiber.unit} / Sugars {((sugars.quantity)/servings).toFixed()}{sugars.unit}
                                     </li>

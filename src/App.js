@@ -47,15 +47,15 @@ function App() {
           <h1>Find a Recipe</h1>
         </div>
 
-        
-        <form onSubmit={finalSearch} className="container">
-          <input className="search" placeholder="Search..." onChange={myRecipeSearch} value={mySearch} />
-            
+        <div className="container">
+          <form onSubmit={finalSearch}>
+            <input className="search" placeholder="Search..." onChange={myRecipeSearch} value={mySearch} />
+          </form>
+              
           <button onClick={finalSearch}>
             <img src="https://img.icons8.com/fluency/48/000000/fry.png" className="icon" height="35px" alt="magnifying glass" />
           </button>
-        </form>
-        
+        </div>
 
         {myRecipes.map(element => {
           return(
